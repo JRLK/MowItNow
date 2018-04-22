@@ -10,34 +10,51 @@ import java.io.File;
 public class ArgsHelper {
 	
 	private ArgsHelper() {
-		throw new IllegalStateException("Utility class");
+		throw new IllegalStateException("Classe de méthodes statiques.");
 	}
 
 	/**
 	 * Controles les arguments reçues.
 	 * @param args Liste des arguments.
+	 * @return Fichier de commande.
 	 */
-	public static void checkArgs(String[] args) {
-		checkArgsSize(args);
-		checkCommandPath(args[0]);
+	public static File checkArgs(String[] args) {
+		String commandPath = checkArgsSize(args);
+		File commandFile = checkCommandPath(commandPath);
+		checkCommandFile(commandFile);
+		return commandFile;
 	}
 
 	/**
 	 * Vérifie la taille de la liste d'arguments.
 	 * @param args Liste des arguments.
 	 */
-	private static void checkArgsSize(String[] args) {
+	private static String checkArgsSize(String[] args) {
 		if(args.length != 1)
-			System.out.println("Le programme prend obligatoirement 1 argument : le chemin d'accès au fichier de commande.");			
+			throw new CheckException("Le programme prend obligatoirement 1 argument : le chemin d'accès au fichier de commande.");
+		return args[0];
 	}
 	
 	/**
 	 * Vérifie que le fichier de commandes existe.
 	 * @param commandPath Path du fichier de commande.
 	 */
-	private static void checkCommandPath(String commandPath) {
-		File file = new File(commandPath);
-		if(!file.exists())
-			System.out.println("Le fichier de commande n'existe pas.");
+	private static File checkCommandPath(String commandPath) {
+		File commandFile = new File(commandPath);
+		if(!commandFile.exists())
+			throw new CheckException("Le fichier de commande n'existe pas.");
+		if(!commandFile.isFile())
+			throw new CheckException("Le chemin donné ne correspond pas à un fichier.");
+		return commandFile;
+	}
+	
+
+	/**
+	 * Vérifie le fichier de commande.
+	 * @param commandFile Fichier de commande.
+	 */
+	private static void checkCommandFile(File commandFile) {
+		if(!commandFile.canRead())
+			throw new CheckException("Le fichier de commande ne peut pas être lu.");		
 	}
 }
