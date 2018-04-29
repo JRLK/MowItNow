@@ -4,7 +4,7 @@ import java.io.File;
 
 /**
  * Classe qui contient les méthodes static sur les Args.
- * @author jkichenin
+ * @author Johan
  *
  */
 public class ArgsHelper {
