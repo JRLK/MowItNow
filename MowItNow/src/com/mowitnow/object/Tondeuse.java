@@ -10,6 +10,7 @@ import java.util.List;
 public class Tondeuse {
 	
 	private TondeusePosition position;
+	private JardinTaille jardin;
 	private List<CodeTondeuseCommande> commandeList;
 	
 	/**
@@ -22,10 +23,12 @@ public class Tondeuse {
 	/**
 	 * Constructeur avec les arguments.
 	 * @param position Position de la tondeuse.
+	 * @param jardin Taille du jardin.
 	 * @param commandeList Liste de commandes de la tondeuse.
 	 */
-	public Tondeuse(final TondeusePosition position, final List<CodeTondeuseCommande> commandeList) {
+	public Tondeuse(final TondeusePosition position, final JardinTaille jardin, final List<CodeTondeuseCommande> commandeList) {
 		this.setPosition(position);
+		this.setJardin(jardin);
 		this.setCommandeList(commandeList);
 	}
 
@@ -41,6 +44,20 @@ public class Tondeuse {
 	 */
 	public void setPosition(TondeusePosition position) {
 		this.position = position;
+	}
+
+	/**
+	 * @return the jardin
+	 */
+	public JardinTaille getJardin() {
+		return jardin;
+	}
+
+	/**
+	 * @param jardin the jardin to set
+	 */
+	public void setJardin(JardinTaille jardin) {
+		this.jardin = jardin;
 	}
 
 	/**
