@@ -11,10 +11,28 @@ public class TondeusePosition {
 	private int positionY;
 	private CodeTondeuseDirection direction;
 	
+	/**
+	 * Constructeur de TondeusePosition avec la position et la direction en code Tondeuse.
+	 * @param positionX
+	 * @param positionY
+	 * @param direction
+	 */
 	public TondeusePosition(final int positionX, final int positionY, final CodeTondeuseDirection direction) {
 		this.positionX = positionX;
 		this.positionY = positionY;
 		this.direction = direction;
+	}
+	
+	/**
+	 * Constructeur de TondeusePosition avec la position et la direction en code Direction.
+	 * @param positionX
+	 * @param positionY
+	 * @param direction
+	 */
+	public TondeusePosition(final int positionX, final int positionY, final CodeDirection direction) {
+		this.positionX = positionX;
+		this.positionY = positionY;
+		this.direction = CodeTondeuseDirection.valueOf(direction.toString());
 	}
 	
 	/**
@@ -37,7 +55,7 @@ public class TondeusePosition {
 	 * Setter du champ positionY.
 	 * @param positionY
 	 */
-	public void setPostionY(final int positionY) {
+	public void setPositionY(final int positionY) {
 		this.positionY = positionY;
 	}
 	
@@ -45,7 +63,7 @@ public class TondeusePosition {
 	 * Getter du champ positionY.
 	 * @return positionY
 	 */
-	public int getPostionY() {
+	public int getPositionY() {
 		return positionY;
 	}
 	

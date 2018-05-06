@@ -109,7 +109,7 @@ public class FichierServicesImpl implements FichierServices {
 		// Contrôle de la direction.
 		CodeTondeuseDirection direction;
 		try {
-			direction = CodeTondeuseDirection.valueOf(positionRaw[3]);	
+			direction = CodeTondeuseDirection.valueOf(positionRaw[2]);	
 		} catch(IllegalArgumentException iae) {
 			return null;
 		}

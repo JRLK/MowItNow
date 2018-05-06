@@ -103,7 +103,8 @@ public class Main {
 					lastPosition = newPosition;
 				}
 			}
-			System.out.println(lastPosition.toString());
+			String result = String.format("%d %d %s", lastPosition.getPositionX(), lastPosition.getPositionY(), lastPosition.getDirection());
+			System.out.println(result);
 		}
 	}
 }
