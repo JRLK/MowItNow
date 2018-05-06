@@ -52,7 +52,7 @@ public class Main {
 	 */
 	private static List<Tondeuse> getTondeuseList(File commandFile){
 		FichierServices fichierServices = new FichierServicesImpl();
-		fichierServices.displayCommandFile(commandFile);
+		// fichierServices.displayCommandFile(commandFile);
 		
 		List<String> fileContent = fichierServices.readCommandFile(commandFile);
 		boolean firstLine = true;

@@ -63,8 +63,8 @@ public class TondeuseServicesImpl implements TondeuseServices {
 	/** {@inheritDoc} */
 	@Override
 	public boolean checkPostionJardin(TondeusePosition position, JardinTaille jardin) {
-		return !(position.getPositionX() < 1 || position.getPositionX() > jardin.getTailleX() 
-				|| position.getPositionY() < 1 || position.getPositionX() > jardin.getTailleY());
+		return !(position.getPositionX() < 0 || position.getPositionX() > jardin.getTailleX() 
+				|| position.getPositionY() < 0 || position.getPositionX() > jardin.getTailleY());
 	}
 
 }

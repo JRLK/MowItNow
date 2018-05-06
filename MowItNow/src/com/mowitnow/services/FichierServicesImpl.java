@@ -103,7 +103,7 @@ public class FichierServicesImpl implements FichierServices {
 			return null;
 		}
 		// Contrôle la valeur des positions.
-		if(positionX < 1 || positionX > jardin.getTailleX() || positionY < 1 || positionY > jardin.getTailleY()) {
+		if(positionX < 0 || positionX > jardin.getTailleX() || positionY < 0 || positionY > jardin.getTailleY()) {
 			return null;
 		}
 		// Contrôle de la direction.
